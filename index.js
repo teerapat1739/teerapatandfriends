@@ -2,7 +2,7 @@ var app = require('express')()
 var server = require('http').Server(app)
 var io = require('socket.io')(server)
 const robotjs = require('robotjs')
-server.listen(8008, err => {
+server.listen(process.env.PORT||8008, err => {
   if (err) throw err
   console.log('Now listening on', server.address())
 })
